@@ -1,5 +1,5 @@
 ---
 ingress:
   hosts:
-    - <HOSTNAME>.<NAMESPACE>.staging.corp.mongodb.com
+    - remote3.sa.staging.corp.mongodb.com
   enabled: true

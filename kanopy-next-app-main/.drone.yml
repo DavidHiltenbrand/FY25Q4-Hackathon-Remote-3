@@ -30,6 +30,7 @@ steps:
   image: public.ecr.aws/kanopy/drone-helm:v3
   environment:
     NAMESPACE: sa
+    APP: remote3
     RELEASE: kanopy-next-app
   settings:
     chart: mongodb/web-app
