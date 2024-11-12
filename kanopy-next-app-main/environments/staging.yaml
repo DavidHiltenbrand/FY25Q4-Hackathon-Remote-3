@@ -1,0 +1,5 @@
+---
+ingress:
+  hosts:
+    - <HOSTNAME>.<NAMESPACE>.staging.corp.mongodb.com
+  enabled: true
