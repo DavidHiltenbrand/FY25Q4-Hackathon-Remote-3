@@ -4,7 +4,7 @@
 **Project** : _insert project title here_  
 **Team Number** : Remote 3  
 **Team Name** : _insert team name here_  
-**Team Members** : [John Belz](mailto:john.belz@mongodb.com), [Duffy Walsh](mailto:ryan.walsh@mongodb.com), [John Belz](mailto:john.belz@mongodb.com), [Mac Moore](mailto:mac.moore@mongodb.com), [Jay Farnsworth](mailto:jay.farnsworth@mongodb.com), [David Hiltenbrand](mailto:david.hiltenbrand@mongodb.com) <br/>
+**Team Members** : [John Belz](mailto:john.belz@mongodb.com), [Duffy Walsh](mailto:ryan.walsh@mongodb.com), [John Belz](mailto:john.belz@mongodb.com), [Mac Moore](mailto:mac.moore@mongodb.com), [Jay Farnsworth](mailto:jay.farnsworth@mongodb.com), [David Hiltenbrand](mailto:david.hiltenbrand@mongodb.com), [Sohail Shaikh](mailto:sohail.shaikh@mongodb.com) <br/>
 **Demonstration Video** : _Insert link to demonstration video_  
 
 # Overview
