@@ -9,7 +9,7 @@
 
 # Overview
 
-_Insert Executive Overview of your application/demonstration_
+Our project addresses a telecom industry challenge by leveraging GenAI to empower customers to interact with their data intuitively. By combining elements of MongoDB's Developer Data Platform, we demonstrate how businesses can drive better decisions and make data more accessible. This showcases the power of the document model in enabling flexible, real-time insights compared to traditional SQL databases.
 
 # Justification
 
