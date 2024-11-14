@@ -1,4 +1,4 @@
-
+#!/bin/bash
 
 mongosh "mongodb+srv://telcodemo.3ronx.mongodb.net/" --apiVersion 1 --username davidhiltenbrand
 
