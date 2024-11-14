@@ -1,0 +1,27 @@
+s = {
+  '$source': { connectionName: 'telco-metrics-confluent', topic: 'telco_metrics' }
+}
+
+sync = {
+{
+  '$emit': {
+    connectionName: 'telco-metrics-atlas',
+    db: 'equipment_monitor',
+    coll: 'events',
+    timeseries: { timeField: 'timestamp' }
+  }  
+}
+
+af = {
+  '$addFields': { timestamp: { '$dateFromString': { dateString: '$timestamp' } } }
+}
+
+dlq = {
+ "dlq": {
+  "connectionName": "telco_metrics_atlas",
+  "db": "equipment_monitor",
+  "coll": "events_dlq"
+ }
+}
+
+sp.createStreamProcessor('equipmentMonitorEvcents', [s,af,sync], dlq)
