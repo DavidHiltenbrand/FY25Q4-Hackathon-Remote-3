@@ -42,5 +42,15 @@ buildNumber.properties
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
 
+#IDEA
+.idea
+*.iws
+*.iml
+*.ipr
+
+
+#VSCode
+.vscode/
+
 #MacOS things
 .DS_Store

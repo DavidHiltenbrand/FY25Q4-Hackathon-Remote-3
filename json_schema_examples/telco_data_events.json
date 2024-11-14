@@ -1,0 +1,27 @@
+{
+  "timestamp": "2024-11-14T00:46:01Z",
+  "site_id": "caphill",
+  "site_info": {
+    "geo_loc": {
+      "type": "Point",
+      "coordinates": [
+        "-73.935242",
+        "40.73061"
+      ]
+    }
+  },
+  "signal_strength": {
+    "LTE_power": "37",
+    "5G_power": "0"
+  },
+  "backhaul": {
+    "packet_loss_pct": "0.0",
+    "latency_ms": "10.052159672720487",
+    "interface_speed": "10000"
+  },
+  "Equipment_status": {
+    "temp_c": "15",
+    "ups_battery_pct": "98",
+    "grid_power_volts": "214"
+  }
+}

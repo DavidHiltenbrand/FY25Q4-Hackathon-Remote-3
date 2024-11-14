@@ -1,0 +1,24 @@
+{
+   "timestamp":"2024-11-14T00:46:01Z",
+   "site_id":"caphill",
+   "LTE_power":{
+      "min":"37",
+      "max":"57",
+      "avg":"44"
+   },
+   "5G_power":{
+      "min":"37",
+      "max":"57",
+      "avg":"44"
+   },
+   "packet_loss_pct":{
+      "min":"0",
+      "max":"12",
+      "avg":"2"
+   },
+   "latency_ms":{
+      "min":"1",
+      "max":"100",
+      "avg":"5"
+   }
+}
