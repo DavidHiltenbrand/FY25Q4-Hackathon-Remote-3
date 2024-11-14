@@ -1,0 +1,5 @@
+---
+ingress:
+  hosts:
+    - remote3.sa.staging.corp.mongodb.com
+  enabled: true
