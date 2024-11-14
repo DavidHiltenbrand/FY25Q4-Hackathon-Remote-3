@@ -1,0 +1,119 @@
+body {
+    background-color: #f8f9fa;
+}
+
+#chat-box {
+    height: 580px;
+    overflow-y: scroll;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.message {
+    margin-bottom: 15px;
+    display: flex;
+}
+
+.message.user {
+    justify-content: flex-start; /* User messages on the left */
+}
+
+.message.assistant {
+    justify-content: flex-end; /* Assistant messages on the right */
+}
+
+.message .content {
+    padding: 10px 15px;
+    border-radius: 15px;
+    max-width: 70%;
+    word-wrap: break-word;
+    /* Left-align text within the message bubble */
+    text-align: left;
+}
+
+.message.user .content {
+    background-color: #e9ecef; /* Gray background for user */
+    color: #212529;
+}
+
+.message.assistant .content {
+    background-color: #c5eec5; /* Green background for assistant */
+    color: #212529;
+}
+
+div.content > p:first-child {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+div.content > p:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+input:focus, textarea:focus {
+    outline: 2px solid #c5eec5 !important; /* Light green */
+    box-shadow: 0 0 5px #c5eec5 !important; /* Optional green shadow effect */
+}
+
+button:focus {
+    outline: none !important; /* Light green */
+    box-shadow: 0 0 5px #c5eec5 !important; /* Optional green shadow effect */
+}
+
+ol li, ul li {
+    list-style: square;
+    margin-left: 1.4em;
+    margin-bottom: 1em;
+}
+
+li ol li, li ul li {
+    margin-top: 1em;
+}
+
+strong {
+    color: #222;
+    font-weight: bold;
+}
+
+h3, h4 {
+    color: #00684A;
+    font-weight: normal;
+    padding-top: 0.9em;
+    padding-bottom: 0.5em;
+}
+
+h3 strong, h4 strong {
+    color: #00684A;
+    font-weight: normal;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.4rem;
+}
+
+table {
+    font-size: 17px;
+    line-height: 1.45em;
+    margin-bottom: 1em;
+}
+
+thead th {
+    color: #222;
+    font-weight: bold;
+}
+
+tbody td strong {
+    color: #222;
+    font-weight: normal;
+}
+
+td, th {
+    padding-right: 1.15em;
+}
