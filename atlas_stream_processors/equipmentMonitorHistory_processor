@@ -1,0 +1,83 @@
+let s = {
+  '$source': { connectionName: 'telco-metrics-confluent', topic: 'telco_metrics' }
+}
+
+let g = {
+    "$group": {
+        "_id": {
+            site_id: "$site_id", 
+            start_time: "$_stream_meta.window.start"
+        },
+        "count": {
+            "$sum": 1
+        }, 
+        "LTE_min": {
+            "$min": "$signal_strength.LTE_power"
+        },
+        "LTE_max": {
+            "$max": "$signal_strength.LTE_power"
+        },
+        "LTE_avg": {
+            "$avg": "$signal_strength.LTE_power"
+        },
+        "5G_min": {
+            "$min": "$signal_strength.5G_power"
+        }, 
+        "5G_max": {
+            "$max": "$signal_strength.5G_power"
+        },
+        "5G_avg": {
+            "$avg": "$signal_strength.5G_power"
+        }, 
+        "packet_loss_min": {
+            "$min": "$backhaul.packet_loss_pct"
+        },
+        "packet_loss_max": {
+            "$max": "$backhaul.packet_loss_pct"
+        }, 
+        "packet_loss_avg": {
+            "$avg": "$backhaul.packet_loss_pct"
+        }, 
+        "latency_min": {
+            "$min": "$backhaul.latency_ms"
+        }, 
+        "latency_max": {
+            "$max": "$backhaul.latency_ms"
+        }, 
+        "latency_avg": {
+            "$avg": "$backhaul.latency_ms"
+        }  
+    }
+}
+
+let w = {
+    "$tumblingWindow": {
+        "interval": {
+            "size": NumberInt(300),
+            "unit": "second"
+        },
+        "pipeline": [g]
+    }
+}
+
+let merge = {
+    "$merge": {
+        "into": {
+            "connectionName": "telco-metrics-atlas",
+            "db": "equipment_monitor",
+            "coll": "history"
+        },
+        "whenMatched" : "replace",
+        "whenNotMatched" : "insert"
+    }
+}
+
+dlq = {
+    "dlq": {
+        "connectionName": "telco-metrics-atlas",
+        "db": "equipment_monitor",
+        "coll": "history_dlq"
+    }
+}
+
+sp.createStreamProcessor("solarPanelInsights", [s,w,merge], dlq)

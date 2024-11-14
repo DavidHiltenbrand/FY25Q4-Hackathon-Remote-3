@@ -1,18 +1,30 @@
-
+#!/bin/bash
 
 mongosh "mongodb+srv://telcodemo.3ronx.mongodb.net/" --apiVersion 1 --username davidhiltenbrand
 
 use equipment_monitor;
 
+db.events.drop();
+
+db.createCollection(
+   "events",
+   {
+      timeseries: {
+         timeField: "timestamp",
+         metaField: "site_id",
+         granularity: "seconds"
+      }
+   }
+);
+
+
 db.events.insertMany([
   {
-    "timestamp": "2023-10-01T12:00:00Z",
-    "site_info": {
-      "site_id": "site_001",
-      "geo_loc": {
-        "type": "Point",
-        "coordinates": [-73.935242, 40.730610]
-      }
+    "timestamp": new Date("2023-10-01T12:00:00Z"),
+    "site_id": "site_001",
+    "geo_loc": {
+      "type": "Point",
+      "coordinates": [-73.935242, 40.730610]
     },
     "signal_strength": {
       "LTE_power": -85,
@@ -30,13 +42,11 @@ db.events.insertMany([
     }
   },
   {
-    "timestamp": "2023-10-01T12:01:00Z",
-    "site_info": {
-      "site_id": "site_001",
-      "geo_loc": {
-        "type": "Point",
-        "coordinates": [-73.935242, 40.730610]
-      }
+    "timestamp": new Date("2023-10-01T12:01:00Z"),
+    "site_id": "site_001",
+    "geo_loc": {
+      "type": "Point",
+      "coordinates": [-73.935242, 40.730610]
     },
     "signal_strength": {
       "LTE_power": -83,
@@ -54,13 +64,11 @@ db.events.insertMany([
     }
   },
   {
-    "timestamp": "2023-10-01T12:02:00Z",
-    "site_info": {
-      "site_id": "site_001",
-      "geo_loc": {
-        "type": "Point",
-        "coordinates": [-73.935242, 40.730610]
-      }
+    "timestamp": new Date("2023-10-01T12:02:00Z"),
+    "site_id": "site_001",
+    "geo_loc": {
+      "type": "Point",
+      "coordinates": [-73.935242, 40.730610]
     },
     "signal_strength": {
       "LTE_power": -84,
@@ -78,13 +86,11 @@ db.events.insertMany([
     }
   },
   {
-    "timestamp": "2023-10-01T12:03:00Z",
-    "site_info": {
-      "site_id": "site_001",
-      "geo_loc": {
-        "type": "Point",
-        "coordinates": [-73.935242, 40.730610]
-      }
+    "timestamp": new Date("2023-10-01T12:03:00Z"),
+    "site_id": "site_001",
+    "geo_loc": {
+      "type": "Point",
+      "coordinates": [-73.935242, 40.730610]
     },
     "signal_strength": {
       "LTE_power": -82,
@@ -102,13 +108,11 @@ db.events.insertMany([
     }
   },
   {
-    "timestamp": "2023-10-01T12:04:00Z",
-    "site_info": {
-      "site_id": "site_001",
-      "geo_loc": {
-        "type": "Point",
-        "coordinates": [-73.935242, 40.730610]
-      }
+    "timestamp": new Date("2023-10-01T12:04:00Z"),
+    "site_id": "site_001",
+    "geo_loc": {
+      "type": "Point",
+      "coordinates": [-73.935242, 40.730610]
     },
     "signal_strength": {
       "LTE_power": -81,
@@ -126,13 +130,11 @@ db.events.insertMany([
     }
   },
   {
-    "timestamp": "2023-10-01T12:00:00Z",
-    "site_info": {
-      "site_id": "site_002",
-      "geo_loc": {
-        "type": "Point",
-        "coordinates": [-118.243683, 34.052235]
-      }
+    "timestamp": new Date("2023-10-01T12:00:00Z"),
+    "site_id": "site_002",
+    "geo_loc": {
+      "type": "Point",
+      "coordinates": [-118.243683, 34.052235]
     },
     "signal_strength": {
       "LTE_power": -80,
@@ -150,13 +152,11 @@ db.events.insertMany([
     }
   },
   {
-    "timestamp": "2023-10-01T12:01:00Z",
-    "site_info": {
-      "site_id": "site_002",
-      "geo_loc": {
-        "type": "Point",
-        "coordinates": [-118.243683, 34.052235]
-      }
+    "timestamp": new Date("2023-10-01T12:01:00Z"),
+    "site_id": "site_002",
+    "geo_loc": {
+      "type": "Point",
+      "coordinates": [-118.243683, 34.052235]
     },
     "signal_strength": {
       "LTE_power": -78,
@@ -174,13 +174,11 @@ db.events.insertMany([
     }
   },
   {
-    "timestamp": "2023-10-01T12:02:00Z",
-    "site_info": {
-      "site_id": "site_002",
-      "geo_loc": {
-        "type": "Point",
-        "coordinates": [-118.243683, 34.052235]
-      }
+    "timestamp": new Date("2023-10-01T12:02:00Z"),
+    "site_id": "site_002",
+    "geo_loc": {
+      "type": "Point",
+      "coordinates": [-118.243683, 34.052235]
     },
     "signal_strength": {
       "LTE_power": -79,
@@ -198,13 +196,11 @@ db.events.insertMany([
     }
   },
   {
-    "timestamp": "2023-10-01T12:03:00Z",
-    "site_info": {
-      "site_id": "site_002",
-      "geo_loc": {
-        "type": "Point",
-        "coordinates": [-118.243683, 34.052235]
-      }
+    "timestamp": new Date("2023-10-01T12:03:00Z"),
+    "site_id": "site_002",
+    "geo_loc": {
+      "type": "Point",
+      "coordinates": [-118.243683, 34.052235]
     },
     "signal_strength": {
       "LTE_power": -77,
@@ -222,13 +218,11 @@ db.events.insertMany([
     }
   },
   {
-    "timestamp": "2023-10-01T12:04:00Z",
-    "site_info": {
-      "site_id": "site_002",
-      "geo_loc": {
-        "type": "Point",
-        "coordinates": [-118.243683, 34.052235]
-      }
+    "timestamp": new Date("2023-10-01T12:04:00Z"),
+    "site_id": "site_002",
+    "geo_loc": {
+      "type": "Point",
+      "coordinates": [-118.243683, 34.052235]
     },
     "signal_strength": {
       "LTE_power": -76,
@@ -246,13 +240,11 @@ db.events.insertMany([
     }
   },
   {
-    "timestamp": "2023-10-01T12:00:00Z",
-    "site_info": {
-      "site_id": "site_003",
-      "geo_loc": {
-        "type": "Point",
-        "coordinates": [-122.419418, 37.774929]
-      }
+    "timestamp": new Date("2023-10-01T12:00:00Z"),
+    "site_id": "site_003",
+    "geo_loc": {
+      "type": "Point",
+      "coordinates": [-122.419418, 37.774929]
     },
     "signal_strength": {
       "LTE_power": -75,
@@ -270,13 +262,11 @@ db.events.insertMany([
     }
   },
   {
-    "timestamp": "2023-10-01T12:01:00Z",
-    "site_info": {
-      "site_id": "site_003",
-      "geo_loc": {
-        "type": "Point",
-        "coordinates": [-122.419418, 37.774929]
-      }
+    "timestamp": new Date("2023-10-01T12:01:00Z"),
+    "site_id": "site_003",
+    "geo_loc": {
+      "type": "Point",
+      "coordinates": [-122.419418, 37.774929]
     },
     "signal_strength": {
       "LTE_power": -73,
@@ -294,13 +284,11 @@ db.events.insertMany([
     }
   },
   {
-    "timestamp": "2023-10-01T12:02:00Z",
-    "site_info": {
-      "site_id": "site_003",
-      "geo_loc": {
-        "type": "Point",
-        "coordinates": [-122.419418, 37.774929]
-      }
+    "timestamp": new Date("2023-10-01T12:02:00Z"),
+    "site_id": "site_003",
+    "geo_loc": {
+      "type": "Point",
+      "coordinates": [-122.419418, 37.774929]
     },
     "signal_strength": {
       "LTE_power": -74,
@@ -318,13 +306,11 @@ db.events.insertMany([
     }
   },
   {
-    "timestamp": "2023-10-01T12:03:00Z",
-    "site_info": {
-      "site_id": "site_003",
-      "geo_loc": {
-        "type": "Point",
-        "coordinates": [-122.419418, 37.774929]
-      }
+    "timestamp": new Date("2023-10-01T12:03:00Z"),
+    "site_id": "site_003",
+    "geo_loc": {
+      "type": "Point",
+      "coordinates": [-122.419418, 37.774929]
     },
     "signal_strength": {
       "LTE_power": -72,
@@ -342,13 +328,11 @@ db.events.insertMany([
     }
   },
   {
-    "timestamp": "2023-10-01T12:04:00Z",
-    "site_info": {
-      "site_id": "site_003",
-      "geo_loc": {
-        "type": "Point",
-        "coordinates": [-122.419418, 37.774929]
-      }
+    "timestamp": new Date("2023-10-01T12:04:00Z"),
+    "site_id": "site_003",
+    "geo_loc": {
+      "type": "Point",
+      "coordinates": [-122.419418, 37.774929]
     },
     "signal_strength": {
       "LTE_power": -71,
@@ -366,13 +350,11 @@ db.events.insertMany([
     }
   },
   {
-    "timestamp": "2023-10-01T12:00:00Z",
-    "site_info": {
-      "site_id": "site_004",
-      "geo_loc": {
-        "type": "Point",
-        "coordinates": [-87.629798, 41.878113]
-      }
+    "timestamp": new Date("2023-10-01T12:00:00Z"),
+    "site_id": "site_004",
+    "geo_loc": {
+      "type": "Point",
+      "coordinates": [-87.629798, 41.878113]
     },
     "signal_strength": {
       "LTE_power": -78,
@@ -390,13 +372,11 @@ db.events.insertMany([
     }
   },
   {
-    "timestamp": "2023-10-01T12:01:00Z",
-    "site_info": {
-      "site_id": "site_004",
-      "geo_loc": {
-        "type": "Point",
-        "coordinates": [-87.629798, 41.878113]
-      }
+    "timestamp": new Date("2023-10-01T12:01:00Z"),
+    "site_id": "site_004",
+    "geo_loc": {
+      "type": "Point",
+      "coordinates": [-87.629798, 41.878113]
     },
     "signal_strength": {
       "LTE_power": -76,
@@ -414,13 +394,11 @@ db.events.insertMany([
     }
   },
   {
-    "timestamp": "2023-10-01T12:02:00Z",
-    "site_info": {
-      "site_id": "site_004",
-      "geo_loc": {
-        "type": "Point",
-        "coordinates": [-87.629798, 41.878113]
-      }
+    "timestamp": new Date("2023-10-01T12:02:00Z"),
+    "site_id": "site_004",
+    "geo_loc": {
+      "type": "Point",
+      "coordinates": [-87.629798, 41.878113]
     },
     "signal_strength": {
       "LTE_power": -77,
@@ -438,13 +416,11 @@ db.events.insertMany([
     }
   },
   {
-    "timestamp": "2023-10-01T12:03:00Z",
-    "site_info": {
-      "site_id": "site_004",
-      "geo_loc": {
-        "type": "Point",
-        "coordinates": [-87.629798, 41.878113]
-      }
+    "timestamp": new Date("2023-10-01T12:03:00Z"),
+    "site_id": "site_004",
+    "geo_loc": {
+      "type": "Point",
+      "coordinates": [-87.629798, 41.878113]
     },
     "signal_strength": {
       "LTE_power": -75,
@@ -462,13 +438,11 @@ db.events.insertMany([
     }
   },
   {
-    "timestamp": "2023-10-01T12:04:00Z",
-    "site_info": {
-      "site_id": "site_004",
-      "geo_loc": {
-        "type": "Point",
-        "coordinates": [-87.629798, 41.878113]
-      }
+    "timestamp": new Date("2023-10-01T12:04:00Z"),
+    "site_id": "site_004",
+    "geo_loc": {
+      "type": "Point",
+      "coordinates": [-87.629798, 41.878113]
     },
     "signal_strength": {
       "LTE_power": -74,
@@ -486,13 +460,11 @@ db.events.insertMany([
     }
   },
   {
-    "timestamp": "2023-10-01T12:00:00Z",
-    "site_info": {
-      "site_id": "site_005",
-      "geo_loc": {
-        "type": "Point",
-        "coordinates": [-95.369804, 29.760427]
-      }
+    "timestamp": new Date("2023-10-01T12:00:00Z"),
+    "site_id": "site_005",
+    "geo_loc": {
+      "type": "Point",
+      "coordinates": [-95.369804, 29.760427]
     },
     "signal_strength": {
       "LTE_power": -82,
@@ -510,13 +482,11 @@ db.events.insertMany([
     }
   },
   {
-    "timestamp": "2023-10-01T12:01:00Z",
-    "site_info": {
-      "site_id": "site_005",
-      "geo_loc": {
-        "type": "Point",
-        "coordinates": [-95.369804, 29.760427]
-      }
+    "timestamp": new Date("2023-10-01T12:01:00Z"),
+    "site_id": "site_005",
+    "geo_loc": {
+      "type": "Point",
+      "coordinates": [-95.369804, 29.760427]
     },
     "signal_strength": {
       "LTE_power": -80,
@@ -534,13 +504,11 @@ db.events.insertMany([
     }
   },
   {
-    "timestamp": "2023-10-01T12:02:00Z",
-    "site_info": {
-      "site_id": "site_005",
-      "geo_loc": {
-        "type": "Point",
-        "coordinates": [-95.369804, 29.760427]
-      }
+    "timestamp": new Date("2023-10-01T12:02:00Z"),
+    "site_id": "site_005",
+    "geo_loc": {
+      "type": "Point",
+      "coordinates": [-95.369804, 29.760427]
     },
     "signal_strength": {
       "LTE_power": -81,
@@ -558,13 +526,11 @@ db.events.insertMany([
     }
   },
   {
-    "timestamp": "2023-10-01T12:03:00Z",
-    "site_info": {
-      "site_id": "site_005",
-      "geo_loc": {
-        "type": "Point",
-        "coordinates": [-95.369804, 29.760427]
-      }
+    "timestamp": new Date("2023-10-01T12:03:00Z"),
+    "site_id": "site_005",
+    "geo_loc": {
+      "type": "Point",
+      "coordinates": [-95.369804, 29.760427]
     },
     "signal_strength": {
       "LTE_power": -79,
@@ -580,4 +546,5 @@ db.events.insertMany([
       "ups_battery_pct": 85,
       "grid_power_volts": 227
     }
-  }]);
+  }
+]);
