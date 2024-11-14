@@ -1,24 +1,72 @@
+[{
+   "timestamp":"2024-11-14T00:45:00Z",
+   "site_id":"highlands",
+   "LTE_power":{
+      "min":"27",
+      "max":"47",
+      "avg":"34"
+   },
+   "5G_power":{
+      "min":"80",
+      "max":"90",
+      "avg":"85"
+   },
+   "packet_loss_pct":{
+      "min":"2",
+      "max":"22",
+      "avg":"12"
+   },
+   "latency_ms":{
+      "min":"1",
+      "max":"10",
+      "avg":"5"
+   }
+},
 {
-   "timestamp":"2024-11-14T00:46:01Z",
-   "site_id":"caphill",
+   "timestamp":"2024-11-14T00:40:00Z",
+   "site_id":"highlands",
    "LTE_power":{
       "min":"37",
       "max":"57",
       "avg":"44"
    },
    "5G_power":{
-      "min":"37",
-      "max":"57",
-      "avg":"44"
+      "min":"82",
+      "max":"91",
+      "avg":"84"
+   },
+   "packet_loss_pct":{
+      "min":"1",
+      "max":"8",
+      "avg":"4"
+   },
+   "latency_ms":{
+      "min":"1",
+      "max":"11",
+      "avg":"4"
+   }
+},
+{
+   "timestamp":"2024-11-14T00:35:00Z",
+   "site_id":"highlands",
+   "LTE_power":{
+      "min":"47",
+      "max":"67",
+      "avg":"54"
+   },
+   "5G_power":{
+      "min":"80",
+      "max":"89",
+      "avg":"84"
    },
    "packet_loss_pct":{
       "min":"0",
-      "max":"12",
+      "max":"8",
       "avg":"2"
    },
    "latency_ms":{
       "min":"1",
-      "max":"100",
-      "avg":"5"
+      "max":"9",
+      "avg":"4"
    }
-}
+}]
